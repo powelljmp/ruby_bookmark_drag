@@ -1,5 +1,3 @@
-
-
 $( document ).ready(function() {
 	
 	var modalAdd   = $('#addModal');
@@ -10,7 +8,9 @@ $( document ).ready(function() {
 		grid: [ 10, 10 ]
 	});
 	// draggie.on( 'dragEnd', onDragEnd ); //add event listener
-  $.ajax({
+  
+	/*
+	$.ajax({
       type:"GET",
       url:"/show",
       // data: {id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
@@ -22,7 +22,7 @@ $( document ).ready(function() {
         //alert("finished!")
       }   
     });
-  
+  */
 
   
 	// -- Add site -- //	
@@ -62,7 +62,7 @@ $( document ).ready(function() {
 		var xx = 10;
 		var yy = 10;
 		
-		
+	
 		if(!title){
 			title =  $('#'+id).find('.title').text()
 		}
@@ -75,9 +75,17 @@ $( document ).ready(function() {
 			
 		$.ajax({
 			type:"POST",
+<<<<<<< HEAD
 			url:"create",
 			data: { id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
 			contentType: "application/json; charset=utf-8",
+=======
+			url:"/create",
+			//contentType: "application/json; charset=utf-8",
+			//data: {title:"test title"},
+			data: {url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
+			
+>>>>>>> 250be2eb376f47c47dd543843a200947ad81846c
       dataType: "json",
       success:function(response){
 				alert("saved" +response);
