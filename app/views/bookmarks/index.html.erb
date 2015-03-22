@@ -2,6 +2,10 @@ hello world
 
 <div id="results"></div>
 
+<% @bookmarks.each do |bm| %>
+  <%= render 'shared/bookmark', bm: bm %>
+<% end %>
+
 <div id="basic" class="draggie">
 		<div class="total-centered">Drag me</div>
 </div>
