@@ -8,7 +8,9 @@ $( document ).ready(function() {
 		grid: [ 10, 10 ]
 	});
 	// draggie.on( 'dragEnd', onDragEnd ); //add event listener
-  $.ajax({
+  
+	/*
+	$.ajax({
       type:"GET",
       url:"/show",
       // data: {id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
@@ -20,7 +22,7 @@ $( document ).ready(function() {
         //alert("finished!")
       }   
     });
-  
+  */
 
   
 	// -- Add site -- //	
@@ -73,9 +75,11 @@ $( document ).ready(function() {
 			
 		$.ajax({
 			type:"POST",
-			url:"create",
-			data: { _method: 'POST', id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
-			contentType: "application/json; charset=utf-8",
+			url:"/create",
+			//contentType: "application/json; charset=utf-8",
+			//data: {title:"test title"},
+			data: {url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
+			
       dataType: "json",
       success:function(response){
 				alert("saved" +response);

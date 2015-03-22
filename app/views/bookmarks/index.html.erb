@@ -4,8 +4,10 @@
 
 <div id="results"></div>
 
+<%= @bookmarks.length %>
+
 <% @bookmarks.each do |bm| %>
-  <%= render 'shared/bookmark', bm: bm %>
+  <%= render 'shared/bookmark', :bm => bm %>
 <% end %>
 
 <div id="basic" class="draggie">
