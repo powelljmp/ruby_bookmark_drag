@@ -76,7 +76,7 @@ $( document ).ready(function() {
 		$.ajax({
 			type:"POST",
 			url:"create",
-			data: { _method: 'POST', id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
+			data: { id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
 			contentType: "application/json; charset=utf-8",
       dataType: "json",
       success:function(response){

@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.all
+    @bookmark = Bookmark.new
   end
 
   def new 
@@ -9,11 +10,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    respond_to do |format|
-      if @bookmark.save
-        format.json
-      end
-    end
+    @bookmark.save
     flash[:notice] = "Bookmark added!"
     redirect_to root_path
   end
