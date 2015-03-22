@@ -9,7 +9,11 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.save
+    respond_to do |format|
+      if @bookmark.save
+        format.json
+      end
+    end
     flash[:notice] = "Bookmark added!"
     redirect_to root_path
   end

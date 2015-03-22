@@ -1,8 +1,9 @@
-var modalAdd 	= $('#addModal');
+
 
 $( document ).ready(function() {
 	
-	
+	var modalAdd   = $('#addModal');
+
 	console.log("Add listener to ");
 	var elemA = document.querySelector("#basic");
 	var draggie = new Draggabilly( elemA, {
@@ -73,12 +74,12 @@ $( document ).ready(function() {
 		}
 			
 		$.ajax({
-			type:"GET",
+			type:"POST",
 			url:"create",
-			data: {id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
-			dataType: "json",
-			datatype:"jsondata",
-			success:function(response){
+			data: { _method: 'POST', id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
+			contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success:function(response){
 				alert("saved" +response);
 			}		
 		});
