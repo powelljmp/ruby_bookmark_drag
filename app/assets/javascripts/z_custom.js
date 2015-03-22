@@ -1,7 +1,7 @@
-var modalAdd 	= $('#addModal');
+
 
 $( document ).ready(function() {
-	
+	var modalAdd 	= $('#addModal');
 	
 	console.log("Add listener to ");
 	var elemA = document.querySelector("#basic");
@@ -61,7 +61,7 @@ $( document ).ready(function() {
 		var xx = 10;
 		var yy = 10;
 		
-		
+	
 		if(!title){
 			title =  $('#'+id).find('.title').text()
 		}
