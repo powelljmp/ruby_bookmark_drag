@@ -6,7 +6,7 @@ resources :bookmarks
 get '/show', to: 'bookmarks#show' 
 get '/new', to: 'bookmarks#new'
 
-post 'create' => 'bookmarks#create'
+post 'bookmarks' => 'bookmarks#create'
 
 
 

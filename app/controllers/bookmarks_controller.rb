@@ -14,30 +14,38 @@ class BookmarksController < ApplicationController
 # sent as part of the request body.
 # :create -> will hold all the params, which could include  :title, :<name>
   def create
+    @bookmark = Bookmark.create(bookmark_params)
+  end
+
+
+
+
+
+=begin
+Comment block
 <<<<<<< HEAD
-    @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.save
     flash[:notice] = "Bookmark added!"
     redirect_to root_path
-=======
+
   	@bookmark = Bookmark.new(params[:create]) 
   	if @bookmark.save
 		# render text: "Thanks for sending a GET request with cURL! #{request.body.read}"
 		 render json: params[:title]
    	end 
->>>>>>> 250be2eb376f47c47dd543843a200947ad81846c
-  end
+=======
+=end   	
+   	
+  
 
 
 
   def show
   # need to pass through local variable bm
   # which contains info 
-    render partial: 'shared/bookmark', layout: false
+    # render partial: 'shared/bookmark', layout: false
   end
 
-  private
-
+private
   def bookmark_params
     params.require(:bookmark).permit!
   end

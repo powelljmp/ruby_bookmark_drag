@@ -1,4 +1,4 @@
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModalShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,60 +9,21 @@
         <h4 class="modal-title" id="exampleModalLabel">New Site</h4>
       </div>
       <div class="modal-body">
-<<<<<<< HEAD
-     
-      <%= form_for @bookmark, :html => {class: 'form-horizontal'} do |f| %>
-        <div class="form-group">
-          <%= f.label :title, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
-          <%= f.text_field :title, class: 'form-control', autofocus: true %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :url, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
-          <%= f.text_field :url, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <%= f.submit(@bookmark.new_record? ? "Add" : "Update", class: 'btn btn-default') %>
-            <%= link_to 'Cancel', root_path, class: 'btn btn-default' %>
-          </div>
-        </div>
-      <% end %>
 
-<!--         <form role="form" data-remote="true" method="POST">
-=======
-        <form role="form" data-remote="true">
->>>>>>> 250be2eb376f47c47dd543843a200947ad81846c
-    
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">Title:</label>
-            <input type="text" class="form-control" id="site-title">
-          </div>
-      
-          <div class="form-group">
-      <label for="message-text" class="control-label">URL:</label>
-      <input type="text" class="form-control" id="site-url">
-          </div>
-      
-      <div class="form-group">
-      <label for="message-text" class="control-label">LAYER:</label>
-      <input type="text" class="form-control" id="site-layer">
-          </div>
-      
-       <div class="form-group">
-      <label for="message-text" class="control-label">TAG:</label>
-      <input type="text" class="form-control" id="site-tags">
-          </div>
-      
-      <input type="hidden" id="site-id" />
-        </form> -->
-      </div>
+
+<%= form_for(@bookmark, remote: true) do |f| %>
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br />
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+
+
+
+</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button", method: :post, remote: true, class="btn btn-success">Add</button>
+        <button type="button" class="btn btn-success">Add</button>
       </div>
     </div>
   </div>

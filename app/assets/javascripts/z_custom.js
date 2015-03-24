@@ -28,7 +28,7 @@ $( document ).ready(function() {
 	// -- Add site -- //	
 	$("#addBookmark").click(function(){
 		//call modal
-		 $('#addModal').modal({
+		 $('#addModalShow').modal({
 			keyboard: true
 		 })
 	});	
@@ -74,18 +74,15 @@ $( document ).ready(function() {
 		}
 			
 		$.ajax({
-			type:"POST",
-<<<<<<< HEAD
-			url:"create",
-			data: { id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
-			contentType: "application/json; charset=utf-8",
-=======
+			type:"POST",			
+			//data: { id: id, url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
+
 			url:"/create",
 			//contentType: "application/json; charset=utf-8",
 			//data: {title:"test title"},
 			data: {url:url, title:title, x:xx, y:yy, layer:layer, tags:tags },
 			
->>>>>>> 250be2eb376f47c47dd543843a200947ad81846c
+
       dataType: "json",
       success:function(response){
 				alert("saved" +response);
