@@ -1,1 +1,5 @@
-$("#results").html("<div>NEW FORM</div>");
+$("#addModalShow").modal("hide")
+
+
+$("#results").html("<%= escape_javascript(render 'marker') %>")
+
